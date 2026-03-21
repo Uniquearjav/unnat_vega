@@ -1,14 +1,21 @@
-import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Unnat Vega | Web Development Agency",
+  title: "Unnat Vega | Web Development Agency — Speed Meets Success",
   description:
-    "We build stunning, high-performance websites that convert visitors into customers.",
+    "Unnat Vega delivers blazing-fast, high-performance websites that drive growth. Derived from Sanskrit — Unnat (Progress) + Vega (Speed).",
+  keywords: [
+    "web development",
+    "fast websites",
+    "export websites",
+    "Unnat Vega",
+    "high performance websites",
+  ],
 };
 
 export default function RootLayout({ children }) {

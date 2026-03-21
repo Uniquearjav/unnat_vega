@@ -1,24 +1,24 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
-    Sheet,
-    SheetContent,
-    SheetHeader,
-    SheetTitle,
-    SheetTrigger,
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetHeader,
+  SheetTitle,
 } from "@/components/ui/sheet";
-import { useEffect, useState } from "react";
 import { HiOutlineBars3 } from "react-icons/hi2";
-import { RiCodeSSlashLine } from "react-icons/ri";
+import { RiFlashlightLine } from "react-icons/ri";
 
 const navLinks = [
+  { name: "About", href: "#meaning" },
+  { name: "Performance", href: "#pagespeed" },
+  { name: "Growth", href: "#analytics" },
   { name: "Services", href: "#services" },
   { name: "Portfolio", href: "#portfolio" },
-  { name: "Process", href: "#process" },
-  { name: "Testimonials", href: "#testimonials" },
   { name: "Pricing", href: "#pricing" },
-  { name: "FAQ", href: "#faq" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -44,11 +44,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-              <RiCodeSSlashLine className="text-white text-lg" />
+            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <RiFlashlightLine className="text-white text-lg" />
             </div>
             <span className="text-xl font-bold tracking-tight">
-              Unnat<span className="text-primary"> Vega</span>
+              Unnat<span className="text-primary">Vega</span>
             </span>
           </a>
 
@@ -67,7 +67,9 @@ export default function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button className="rounded-full px-6">Get a Free Quote</Button>
+            <Button className="rounded-full px-6 bg-gradient-to-r from-primary to-amber-500 hover:opacity-90">
+              Get a Free Quote
+            </Button>
           </div>
 
           {/* Mobile Menu */}
@@ -81,10 +83,10 @@ export default function Navbar() {
               <SheetContent side="right" className="w-[300px]">
                 <SheetHeader className="text-left">
                   <SheetTitle className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                      <RiCodeSSlashLine className="text-white text-sm" />
+                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-amber-500 flex items-center justify-center">
+                      <RiFlashlightLine className="text-white text-sm" />
                     </div>
-                    Unnat Vega
+                    UnnatVega
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-1 mt-8">
@@ -95,11 +97,11 @@ export default function Navbar() {
                       onClick={() => setOpen(false)}
                       className="text-base text-muted-foreground hover:text-foreground hover:bg-muted px-4 py-3 rounded-lg transition-colors"
                     >
-                    Unnat Vega  {link.name}
+                      {link.name}
                     </a>
                   ))}
                   <div className="mt-4 px-4">
-                    <Button className="w-full rounded-full">
+                    <Button className="w-full rounded-full bg-gradient-to-r from-primary to-amber-500">
                       Get a Free Quote
                     </Button>
                   </div>

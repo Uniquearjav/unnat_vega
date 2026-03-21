@@ -5,7 +5,7 @@ export default function CTABanner() {
   return (
     <section className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl bg-gradient-to-br from-primary via-purple-600 to-indigo-700 p-10 sm:p-14 lg:p-20 text-center overflow-hidden">
+        <div className="relative rounded-3xl bg-gradient-to-br from-primary via-purple-600 to-amber-500 p-10 sm:p-14 lg:p-20 text-center overflow-hidden">
           {/* Background Decorations */}
           <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3 blur-2xl" />
@@ -15,12 +15,13 @@ export default function CTABanner() {
           {/* Content */}
           <div className="relative z-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
-              Ready to Build Something
-              <br className="hidden sm:block" /> Amazing?
+              Ready for
+              <br className="hidden sm:block" />{" "}
+              <span className="italic">उन्नत वेग</span> — Rapid Progress?
             </h2>
             <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Let&apos;s turn your vision into a stunning digital reality. Start
-              with a free consultation — no strings attached.
+              Let Unnat Vega build your next blazing-fast website. Start with a
+              free consultation — no strings attached.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button

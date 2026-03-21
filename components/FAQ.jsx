@@ -23,14 +23,9 @@ const faqs = [
       "Yes! We help you set up hosting on reliable platforms like Vercel, Netlify, or AWS. We can also assist with domain registration and DNS configuration. Hosting costs are separate and paid directly to the provider.",
   },
   {
-    question: "What if I need changes after the website launches?",
+    question: "Do you create website for foreign clients?",
     answer:
-      "We offer maintenance packages starting at ₹2,500/month for ongoing updates, content changes, and technical support. Small tweaks within the first 30 days after launch are included at no extra charge.",
-  },
-  {
-    question: "Do you create content and copy for the website?",
-    answer:
-      "While our primary focus is design and development, we can help with content structure, SEO-optimized headings, and meta descriptions. For full copywriting, we partner with professional copywriters and can include this as an add-on.",
+      "Yes, we work with clients worldwide. We have experience building websites for businesses in rest of world. We communicate primarily in English and can accommodate different time zones for meetings and updates.",
   },
   {
     question: "What is your payment structure?",
