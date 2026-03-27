@@ -1,55 +1,8 @@
-import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import {
-  RiLineChartLine,
-  RiUserAddLine,
-  RiArrowUpDoubleLine,
-  RiBarChartGroupedLine,
-  RiGroupLine,
-  RiTimeLine,
-} from "react-icons/ri";
+import { Card, CardContent } from "@/components/ui/card";
+import user_img from "@/public/user.png";
+import Image from "next/image";
 import { SiGoogleanalytics } from "react-icons/si";
-
-const growthMilestones = [
-  { users: "1", label: "First User", period: "Day 1", color: "bg-blue-500" },
-  { users: "100", label: "Gaining Traction", period: "Month 1", color: "bg-purple-500" },
-  { users: "500", label: "Steady Growth", period: "Month 3", color: "bg-primary" },
-  { users: "1K", label: "Breaking Through", period: "Month 6", color: "bg-amber-500" },
-  { users: "2.5K", label: "Accelerating", period: "Month 9", color: "bg-orange-500" },
-  { users: "4.7K", label: "Active Users", period: "Today", color: "bg-emerald-500" },
-];
-
-const analyticsStats = [
-  {
-    icon: RiGroupLine,
-    value: "4.7K",
-    label: "Active Users",
-    change: "+340%",
-    positive: true,
-  },
-  {
-    icon: RiTimeLine,
-    value: "3:42",
-    label: "Avg. Session Duration",
-    change: "+85%",
-    positive: true,
-  },
-  {
-    icon: RiBarChartGroupedLine,
-    value: "12.5K",
-    label: "Page Views/Month",
-    change: "+520%",
-    positive: true,
-  },
-  {
-    icon: RiUserAddLine,
-    value: "68%",
-    label: "New Visitors",
-    change: "+45%",
-    positive: true,
-  },
-];
 
 export default function AnalyticsGrowth() {
   return (
@@ -78,22 +31,20 @@ export default function AnalyticsGrowth() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols gap-10 lg:gap-16 items-start">
-          <div className="space-y-6">
+        <div>
             {/* Analytics Screenshot */}
-            <Card className="overflow-hidden img-hover-zoom">
-              <div className="relative">
+            {/* i want it in center as well as same as image size */}
+            <Card className="mx-auto mb-8 border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 w-fit">
+              <div className="relative flex justify-center items-center overflow-hidden">
                 <div className="absolute top-3 left-3 z-10">
-                  <Badge className="bg-primary text-white rounded-full text-xs">
+                  <Badge className="bg-primary text-black rounded-full text-xs">
                     📊 Google Analytics — Real Data
                   </Badge>
                 </div>
                 <Image
-                  src="/analytics-growth.png"
-                  alt="Google Analytics showing growth from 1 to 4.7K active users"
-                  width={800}
-                  height={500}
-                  className="w-full h-auto object-cover"
+                  src={user_img}
+                  alt="Google Analytics showing growth from 1 to 2.6K new user users"
+                  className="rounded-xl m-5"
                 />
               </div>
               <CardContent className="p-4 bg-muted/30">
@@ -113,7 +64,6 @@ export default function AnalyticsGrowth() {
             </div>
           </div>
         </div>
-      </div>
     </section>
   );
 }

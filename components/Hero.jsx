@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { HiArrowRight } from "react-icons/hi2";
 import { FiExternalLink } from "react-icons/fi";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -37,14 +38,18 @@ export default function Hero() {
                 size="lg"
                 className="rounded-full px-8 gap-2 text-base bg-gradient-to-r from-primary to-amber-500 hover:opacity-90"
               >
+                <Link href="/#contact" className="flex items-center gap-4">
                 Start Your Project <HiArrowRight className="text-lg" />
+                </Link>
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 className="rounded-full px-8 gap-2 text-base"
               >
-                View Our Work <FiExternalLink />
+                <Link href="/#portfolio" className="flex items-center gap-4">
+                  View Our Work <FiExternalLink />
+                </Link>
               </Button>
             </div>
 

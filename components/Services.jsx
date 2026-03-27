@@ -84,7 +84,7 @@ export default function Services() {
               >
                 <CardHeader>
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Icon className="text-2xl text-primary group-hover:text-white transition-colors" />
+                    <Icon className="text-2xl text-primary group-hover:text-black transition-colors" />
                   </div>
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>

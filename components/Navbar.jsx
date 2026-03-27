@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/sheet";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { RiFlashlightLine } from "react-icons/ri";
+import Image from "next/image";
+import Link from "next/link";
 
 const navLinks = [
   { name: "About", href: "#meaning" },
@@ -43,14 +45,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-amber-500 flex items-center justify-center group-hover:scale-110 transition-transform">
-              <RiFlashlightLine className="text-white text-lg" />
-            </div>
+          <Link href="/" className="flex items-center gap-2 group">
+            <Image src="/unnatvega_logo.png" alt="Unnat Vega Logo" className="rounded-lg" width={40} height={40} />
             <span className="text-xl font-bold tracking-tight">
               Unnat<span className="text-primary">Vega</span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-8">
@@ -83,9 +83,7 @@ export default function Navbar() {
               <SheetContent side="right" className="w-[300px]">
                 <SheetHeader className="text-left">
                   <SheetTitle className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-amber-500 flex items-center justify-center">
-                      <RiFlashlightLine className="text-white text-sm" />
-                    </div>
+                    <Image src="/unnatvega_logo.svg" alt="UnnatVega Logo" width={36} height={36} />
                     UnnatVega
                   </SheetTitle>
                 </SheetHeader>

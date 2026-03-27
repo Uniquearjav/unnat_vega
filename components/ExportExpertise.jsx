@@ -1,50 +1,16 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
   RiGlobalLine,
   RiShipLine,
-  RiExternalLinkLine,
   RiMapPinLine,
   RiTeamLine,
   RiCheckDoubleLine,
-  RiArrowRightLine,
   RiStarLine,
 } from "react-icons/ri";
-import { HiArrowRight } from "react-icons/hi2";
+import country_img from "@/public/country.png";
 import { FiGlobe } from "react-icons/fi";
-
-const exportProjects = [
-  {
-    name: "Nirvatatva",
-    url: "nirvatatva.com",
-    description:
-      "Premium Indian handicraft exporter reaching global buyers with a stunning, SEO-optimized website that ranks internationally.",
-    countries: "100+",
-    industry: "Handicraft Exports",
-    gradient: "from-amber-500 to-orange-600",
-    stats: [
-      { label: "Countries", value: "100+" },
-      { label: "PageSpeed", value: "94" },
-      { label: "Active Users", value: "4.7K" },
-    ],
-  },
-  {
-    name: "Revati Craft",
-    url: "revaticraft.com",
-    description:
-      "Artisan craft exporter from India showcasing handmade products to international buyers with an elegant, fast-loading e-commerce experience.",
-    countries: "50+",
-    industry: "Artisan Craft Exports",
-    gradient: "from-emerald-500 to-teal-600",
-    stats: [
-      { label: "Countries", value: "50+" },
-      { label: "PageSpeed", value: "90+" },
-      { label: "Conversion", value: "3.2%" },
-    ],
-  },
-];
 
 const capabilities = [
   {
@@ -71,7 +37,7 @@ const capabilities = [
 
 export default function ExportExpertise() {
   return (
-    <section className="py-20 lg:py-32 bg-muted/30 relative overflow-hidden scroll-mt-20">
+    <section className="py-20 lg:py-32 relative overflow-hidden scroll-mt-20">
       {/* Background Decorations */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-3 h-3 rounded-full bg-primary/30 animate-pulse" />
@@ -102,28 +68,20 @@ export default function ExportExpertise() {
           </p>
         </div>
         {/* Country Visitors Image */}
-        <Card className="overflow-hidden mb-12 max-w-4xl mx-auto img-hover-zoom">
-          <div className="relative">
-            <div className="absolute top-3 left-3 z-10">
-              <Badge className="bg-primary text-white rounded-full text-xs">
-                🌍 Google Analytics — Country Data
-              </Badge>
-            </div>
+        <Card className="overflow-hidden mb-12 max-w-4xl mx-auto h-fit">
+          <div className="relative items-center justify-center flex">
             <Image
-              src="/country-visitors.png"
+              src={country_img}
               alt="Google Analytics showing visitors from 100+ countries for Nirvatatva"
-              width={1000}
-              height={500}
-              className="w-full h-auto object-cover"
+              className=" m-5 rounded-xl"
             />
           </div>
           <CardContent className="p-5 bg-muted/30">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex flex-col sm:flex-row items-center rounded-xl justify-between gap-4">
               <p className="text-sm text-muted-foreground">
                 📸 Actual Google Analytics data from{" "}
                 <strong className="text-foreground">Nirvatatva</strong> — visitors from{" "}
-                <strong className="text-emerald-500">100+ countries</strong>{" "}
-                across 6 continents
+                <strong className="text-emerald-500">100+ countries</strong>
               </p>
               <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
                 <RiCheckDoubleLine className="text-emerald-500" />
@@ -144,7 +102,7 @@ export default function ExportExpertise() {
               >
                 <CardContent className="p-5 text-center">
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary group-hover:scale-110 transition-all duration-300">
-                    <Icon className="text-2xl text-primary group-hover:text-white transition-colors" />
+                    <Icon className="text-2xl text-primary group-hover:text-black transition-colors" />
                   </div>
                   <h4 className="text-sm font-semibold mb-1">{cap.title}</h4>
                   <p className="text-xs text-muted-foreground leading-relaxed">

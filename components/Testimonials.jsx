@@ -5,28 +5,28 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CEO, TechStart Inc.",
+    name: "Alpha Jain",
+    role: "Owner, Alritz Consultancy",
     content:
       "Unnat Vega completely transformed our online presence. Our new website has increased leads by 150% in just three months. The team's expertise and attention to detail blew us away.",
     rating: 5,
-    initials: "SJ",
+    initials: "AJ",
   },
   {
-    name: "Michael Chen",
-    role: "Founder, GreenLeaf Co.",
+    name: "Simple Bhansali",
+    role: "Consultant, Numerologist Simple Bhansali",
     content:
       "From the initial consultation to the final launch, working with Unnat Vega was an incredible experience. They understood our vision perfectly and delivered beyond expectations.",
     rating: 5,
-    initials: "MC",
+    initials: "SB",
   },
   {
-    name: "Emily Rodriguez",
-    role: "Marketing Director, BluePeak",
+    name: "Siddharth Dash",
+    role: "Partner, Revati Craft",
     content:
       "The website Unnat Vega built for us is not only stunning but also incredibly fast and SEO-friendly. Our organic traffic has doubled since the launch. Highly recommended!",
     rating: 5,
-    initials: "ER",
+    initials: "SD",
   },
 ];
 

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 
 const projects = [
   {
@@ -13,8 +13,7 @@ const projects = [
       "Export business website with product catalog, request sample form, contact form, and client testimonials.",
     image: "/revati.png",
     tech: ["Next.js", "JavaScript", "Tailwind"],
-    live: "#",
-    github: "#",
+    live: "https://www.revaticraft.com",
   },
   {
     title: "Nirvatatva",
@@ -23,8 +22,7 @@ const projects = [
       "Dynamic export business e-commerce website with product listings.",
     image: "/nirvatatva.png",
     tech: ["Payload CMS", "MongoDB", "Next.js"],
-    live: "#",
-    github: "#",
+    live: "https://www.nirvatatva.com",
   },
   {
     title: "Arjav Consultancy",
@@ -33,8 +31,7 @@ const projects = [
       "Tax consultancy website with client testimonials, services, and contact information.",
     image: "/a_consult.png",
     tech: ["Tailwind", "Next.js"],
-    live: "#",
-    github: "#",
+    live: "https://arjavconsultancy.vercel.app",
   },
   {
     title: "Numerologist Simple Bhansali",
@@ -43,8 +40,7 @@ const projects = [
       "Numerology consultancy website with personalized readings, testimonials, and contact form.",
     image: "/numerologist_simple.png",
     tech: ["Next.js"],
-    live: "#",
-    github: "#",
+    live: "https://numerologistsimplebhansali.vercel.app",
   },
     {
     title: "Anantastra",
@@ -53,8 +49,7 @@ const projects = [
       "Open source SaaS project with simple interest calculator, morse code translator, and responsive design.",
     image: "/anantastra.png",
     tech: ["Next.js"],
-    live: "#",
-    github: "#",
+    live: "https://anantastra.vercel.app",
   },
 ];
 
@@ -103,14 +98,6 @@ export default function Portfolio() {
                     className="w-11 h-11 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all hover:scale-110"
                   >
                     <FiExternalLink className="text-lg" />
-                  </a>
-
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    className="w-11 h-11 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-white hover:bg-white/30 transition-all hover:scale-110"
-                  >
-                    <FiGithub className="text-lg" />
                   </a>
                 </div>
               </div>
