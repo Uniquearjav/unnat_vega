@@ -16,12 +16,6 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left Content */}
           <div className="animate-slide-up">
-            <Badge
-              variant="secondary"
-              className="mb-6 px-4 py-1.5 text-sm rounded-full"
-            >
-              ⚡ Speed Meets Success — Derived from Sanskrit
-            </Badge>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.1] tracking-tight">
               We Build
@@ -34,8 +28,6 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed">
-              <strong className="text-foreground">Unnat</strong> (उन्नत) means Progress.{" "}
-              <strong className="text-foreground">Vega</strong> (वेग) means Speed.
               We deliver websites at lightning speed with performance scores that
               speak for themselves.
             </p>
@@ -61,7 +53,7 @@ export default function Hero() {
               {[
                 { number: "90+", label: "Avg PageSpeed Score" },
                 { number: "100+", label: "Countries Reached" },
-                { number: "4.7K", label: "Active Users" },
+                { number: "150+", label: "Instagram Followers" },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-500">
@@ -100,12 +92,6 @@ export default function Hero() {
                   <span className="text-green-400">meaning</span>
                   <span className="text-muted-foreground">: </span>
                   <span className="text-amber-300">{'"'}Speed + Progress{'"'}</span>
-                  <span className="text-muted-foreground">,</span>
-                </div>
-                <div className="pl-6">
-                  <span className="text-green-400">origin</span>
-                  <span className="text-muted-foreground">: </span>
-                  <span className="text-amber-300">{'"'}Sanskrit{'"'}</span>
                   <span className="text-muted-foreground">,</span>
                 </div>
                 <div className="pl-6">

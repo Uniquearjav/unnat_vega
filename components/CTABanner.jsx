@@ -15,9 +15,7 @@ export default function CTABanner() {
           {/* Content */}
           <div className="relative z-10">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
-              Ready for
-              <br className="hidden sm:block" />{" "}
-              <span className="italic">उन्नत वेग</span> — Rapid Progress?
+              Ready for Rapid Progress?
             </h2>
             <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
               Let Unnat Vega build your next blazing-fast website. Start with a

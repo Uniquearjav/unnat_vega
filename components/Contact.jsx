@@ -1,46 +1,217 @@
+"use client";
+
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { HiArrowRight } from "react-icons/hi2";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
+import {
+    FiClock,
+    FiMail,
+    FiMapPin,
+    FiPhone,
+    FiSend,
+} from "react-icons/fi";
 
-export default function CTABanner() {
+const contactInfo = [
+  {
+    icon: FiMail,
+    title: "Email Us",
+    detail: "unnatvega@gmail.com",
+    sub: "We reply within 24 hours",
+  },
+  {
+    icon: FiPhone,
+    title: "Call Us",
+    detail: "+91 7597464336",
+    sub: "Mon–Fri, 9 AM – 6 PM IST",
+  },
+  {
+    icon: FiMapPin,
+    title: "Address",
+    detail: "Jodhpur, Rajasthan, India",
+    sub: "Available worldwide",
+  },
+  {
+    icon: FiClock,
+    title: "Working Hours",
+    detail: "Mon – Fri",
+    sub: "9:00 AM – 10:00 PM IST",
+  },
+];
+
+export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    budget: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setSubmitted(true);
+    setFormData({ name: "", email: "", subject: "", budget: "", message: "" });
+    setTimeout(() => setSubmitted(false), 4000);
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
-    <section className="py-20 lg:py-32">
+    <section id="contact" className="py-20 lg:py-32 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl bg-gradient-to-br from-primary via-purple-600 to-amber-500 p-10 sm:p-14 lg:p-20 text-center overflow-hidden">
-          {/* Background Decorations */}
-          <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3 blur-2xl" />
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white/10 rounded-2xl rotate-45" />
-          <div className="absolute bottom-10 right-1/4 w-20 h-20 border border-white/10 rounded-full" />
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <Badge variant="secondary" className="mb-4 rounded-full px-4 py-1">
+            Contact Us
+          </Badge>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
+            Let&apos;s Start Your{" "}
+            <span className="text-primary">Project</span>
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Have a project in mind? Fill out the form and we&apos;ll get back to
+            you within 24 hours.
+          </p>
+        </div>
 
-          {/* Content */}
-          <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
-              Ready for
-              <br className="hidden sm:block" />{" "}
-              <span className="italic">उन्नत वेग</span> — Rapid Progress?
-            </h2>
-            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Let Unnat Vega build your next blazing-fast website. Start with a
-              free consultation — no strings attached.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="rounded-full px-8 gap-2 text-base"
-              >
-                Start Your Project <HiArrowRight />
-              </Button>
-              <a
-                href="#portfolio"
-                className="text-white/80 hover:text-white text-sm underline underline-offset-4 transition-colors"
-              >
-                or view our portfolio first
-              </a>
-            </div>
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Left — Contact Info */}
+          <div className="lg:col-span-2 space-y-4">
+            {contactInfo.map((item) => {
+              const Icon = item.icon;
+              return (
+                <Card
+                  key={item.title}
+                  className="bg-card/50 hover:border-primary/30 transition-colors"
+                >
+                  <CardContent className="flex items-start gap-4 p-5">
+                    <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Icon className="text-xl text-primary" />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-sm">{item.title}</div>
+                      <div className="text-foreground text-sm mt-0.5">
+                        {item.detail}
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-0.5">
+                        {item.sub}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
+
+          {/* Right — Form */}
+          <Card className="lg:col-span-3">
+            <CardHeader>
+              <CardTitle className="text-xl">Send us a message</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {submitted ? (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
+                    <FiSend className="text-2xl text-green-500" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2">
+                    Message Sent!
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Thanks for reaching out. We&apos;ll get back to you within
+                    24 hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">
+                        Full Name
+                      </label>
+                      <Input
+                        name="name"
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">
+                        Email Address
+                      </label>
+                      <Input
+                        name="email"
+                        type="email"
+                        placeholder="john@example.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">
+                        Project Type
+                      </label>
+                      <Input
+                        name="subject"
+                        placeholder="e.g. Business Website"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-medium mb-2 block">
+                        Budget Range
+                      </label>
+                      <Input
+                        name="budget"
+                        placeholder="e.g. ₹50,000 or $1000"
+                        value={formData.budget}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="text-sm font-medium mb-2 block">
+                      Project Details
+                    </label>
+                    <Textarea
+                      name="message"
+                      placeholder="Tell us about your project, goals, and timeline..."
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    className="w-full sm:w-auto rounded-full px-8 gap-2"
+                  >
+                    Send Message <FiSend />
+                  </Button>
+                </form>
+              )}
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>
   );
-} 
+}

@@ -101,84 +101,6 @@ export default function ExportExpertise() {
             ready to serve foreign clients too.
           </p>
         </div>
-
-        {/* Export Projects */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 mb-12">
-          {exportProjects.map((project) => (
-            <Card
-              key={project.name}
-              className="overflow-hidden group hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5"
-            >
-              {/* Header Gradient */}
-              <div
-                className={`h-3 bg-gradient-to-r ${project.gradient}`}
-              />
-
-              <CardContent className="p-6 lg:p-8">
-                {/* Top */}
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <div className="flex items-center gap-3 mb-2">
-                      <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg`}
-                      >
-                        <RiShipLine className="text-2xl text-white" />
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-bold">{project.name}</h3>
-                        <p className="text-xs text-muted-foreground">
-                          {project.industry}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <a
-                    href={`https://${project.url}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-                  >
-                    <RiExternalLinkLine className="text-lg" />
-                  </a>
-                </div>
-
-                <p className="text-sm text-muted-foreground leading-relaxed mb-6">
-                  {project.description}
-                </p>
-
-                {/* Stats Row */}
-                <div className="grid grid-cols-3 gap-3 mb-6">
-                  {project.stats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="text-center p-3 rounded-xl bg-muted/50"
-                    >
-                      <div className="text-lg font-bold text-primary">
-                        {stat.value}
-                      </div>
-                      <div className="text-xs text-muted-foreground">
-                        {stat.label}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Countries Badge */}
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-gradient-to-r from-primary/5 to-amber-500/5 border border-primary/10">
-                  <RiGlobalLine className="text-primary text-lg" />
-                  <span className="text-sm">
-                    Reached visitors from{" "}
-                    <strong className="text-foreground">
-                      {project.countries} countries
-                    </strong>{" "}
-                    worldwide
-                  </span>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
         {/* Country Visitors Image */}
         <Card className="overflow-hidden mb-12 max-w-4xl mx-auto img-hover-zoom">
           <div className="relative">
@@ -233,52 +155,6 @@ export default function ExportExpertise() {
             );
           })}
         </div>
-
-        {/* CTA for Foreign Clients */}
-        <Card className="bg-gradient-to-br from-primary/10 via-card to-amber-500/10 border-primary/20 max-w-3xl mx-auto">
-          <CardContent className="p-8 lg:p-10 text-center">
-            <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-amber-500 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-primary/20">
-              <RiGlobalLine className="text-3xl text-white" />
-            </div>
-            <h3 className="text-2xl lg:text-3xl font-bold mb-3">
-              Looking for a Website Partner from{" "}
-              <span className="text-primary">India</span>?
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed">
-              Whether you&apos;re an exporter from India or a foreign client looking
-              for quality web development, we&apos;ve got you covered. Our proven
-              track record with international projects speaks for itself.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-8">
-              {[
-                "🇺🇸 USA",
-                "🇬🇧 UK",
-                "🇩🇪 Germany",
-                "🇦🇺 Australia",
-                "🇨🇦 Canada",
-                "🇦🇪 UAE",
-                "🇫🇷 France",
-                "🇯🇵 Japan",
-              ].map((country) => (
-                <span
-                  key={country}
-                  className="text-xs px-3 py-1.5 rounded-full bg-muted/50 border border-border"
-                >
-                  {country}
-                </span>
-              ))}
-              <span className="text-xs px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium">
-                +92 more countries
-              </span>
-            </div>
-            <Button
-              size="lg"
-              className="rounded-full px-8 gap-2 bg-gradient-to-r from-primary to-amber-500 hover:opacity-90"
-            >
-              Work With Us <HiArrowRight />
-            </Button>
-          </CardContent>
-        </Card>
 
         {/* Trust Row */}
         <div className="flex flex-wrap justify-center gap-6 mt-10">

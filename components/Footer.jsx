@@ -1,46 +1,130 @@
-import { Button } from "@/components/ui/button";
-import { HiArrowRight } from "react-icons/hi2";
+import { Separator } from "@/components/ui/separator";
+import {
+    FiDribbble,
+    FiGithub,
+    FiInstagram,
+    FiLinkedin,
+    FiTwitter,
+} from "react-icons/fi";
+import { RiCodeSSlashLine } from "react-icons/ri";
 
-export default function CTABanner() {
+const footerLinks = {
+  services: [
+    { name: "Web Development", href: "#services" },
+    { name: "UI/UX Design", href: "#services" },
+    { name: "E-Commerce", href: "#services" },
+    { name: "SEO Optimization", href: "#services" },
+    { name: "Maintenance", href: "#services" },
+  ],
+  company: [
+    { name: "About Us", href: "#" },
+    { name: "Portfolio", href: "#portfolio" },
+    { name: "Process", href: "#process" },
+    { name: "Testimonials", href: "#testimonials" },
+    { name: "Contact", href: "#contact" },
+  ],
+  resources: [
+    { name: "Blog", href: "#" },
+    { name: "Case Studies", href: "#" },
+    { name: "Documentation", href: "#" },
+    { name: "Help Center", href: "#" },
+  ],
+  legal: [
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
+    { name: "Cookie Policy", href: "#" },
+  ],
+};
+
+const socialLinks = [
+  { icon: FiGithub, href: "#", label: "GitHub" },
+  { icon: FiTwitter, href: "#", label: "Twitter" },
+  { icon: FiLinkedin, href: "#", label: "LinkedIn" },
+  { icon: FiDribbble, href: "#", label: "Dribbble" },
+  { icon: FiInstagram, href: "#", label: "Instagram" },
+];
+
+export default function Footer() {
   return (
-    <section className="py-20 lg:py-32">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative rounded-3xl bg-gradient-to-br from-primary via-purple-600 to-amber-500 p-10 sm:p-14 lg:p-20 text-center overflow-hidden">
-          {/* Background Decorations */}
-          <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/5 rounded-full translate-x-1/3 translate-y-1/3 blur-2xl" />
-          <div className="absolute top-1/2 left-1/4 w-32 h-32 border border-white/10 rounded-2xl rotate-45" />
-          <div className="absolute bottom-10 right-1/4 w-20 h-20 border border-white/10 rounded-full" />
-
-          {/* Content */}
-          <div className="relative z-10">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
-              Ready for
-              <br className="hidden sm:block" />{" "}
-              <span className="italic">उन्नत वेग</span> — Rapid Progress?
-            </h2>
-            <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Let Unnat Vega build your next blazing-fast website. Start with a
-              free consultation — no strings attached.
+    <footer className="bg-muted/30 border-t border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Top Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12">
+          {/* Brand Column */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
+            <a href="#" className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                <RiCodeSSlashLine className="text-white text-sm" />
+              </div>
+              <span className="text-lg font-bold">
+                Unnat<span className="text-primary"> Vega</span>
+              </span>
+            </a>
+            <p className="text-sm text-muted-foreground mb-6 max-w-xs leading-relaxed">
+              We build beautiful, high-performance websites that help businesses
+              grow and succeed in the digital world.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                variant="secondary"
-                className="rounded-full px-8 gap-2 text-base"
-              >
-                Start Your Project <HiArrowRight />
-              </Button>
-              <a
-                href="#portfolio"
-                className="text-white/80 hover:text-white text-sm underline underline-offset-4 transition-colors"
-              >
-                or view our portfolio first
-              </a>
+            <div className="flex gap-2">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    className="w-9 h-9 rounded-lg bg-muted flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-all duration-200"
+                    aria-label={social.label}
+                  >
+                    <Icon className="text-[16px]" />
+                  </a>
+                );
+              })}
             </div>
           </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="font-semibold mb-4 text-sm">Services</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.services.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-semibold mb-4 text-sm">Company</h4>
+            <ul className="space-y-2.5">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <Separator className="my-8" />
+
+        {/* Bottom Bar */}
+        <div className="flex center items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} Unnat Vega. All rights reserved.
+          </p>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

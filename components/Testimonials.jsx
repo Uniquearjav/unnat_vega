@@ -34,7 +34,7 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="py-20 lg:py-32 bg-muted/30 scroll-mt-20"
+      className="py-20 lg:py-32 scroll-mt-20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}

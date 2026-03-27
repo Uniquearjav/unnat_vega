@@ -78,87 +78,7 @@ export default function AnalyticsGrowth() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          {/* Left — Growth Journey + Stats */}
-          <div className="space-y-8">
-            {/* Growth Journey Timeline */}
-            <Card>
-              <CardContent className="p-6">
-                <h4 className="text-base font-semibold mb-6 flex items-center gap-2">
-                  <RiLineChartLine className="text-primary" />
-                  Growth Journey
-                </h4>
-
-                <div className="relative">
-                  {/* Vertical Line */}
-                  <div className="absolute left-[15px] top-2 bottom-2 w-0.5 bg-gradient-to-b from-blue-500 via-primary to-emerald-500" />
-
-                  <div className="space-y-5">
-                    {growthMilestones.map((milestone, index) => (
-                      <div
-                        key={milestone.label}
-                        className="flex items-center gap-4 relative"
-                        style={{ animationDelay: `${index * 0.1}s` }}
-                      >
-                        {/* Dot */}
-                        <div
-                          className={`w-[30px] h-[30px] rounded-full ${milestone.color} flex items-center justify-center flex-shrink-0 z-10 shadow-lg`}
-                        >
-                          <RiArrowUpDoubleLine className="text-white text-xs" />
-                        </div>
-
-                        {/* Content */}
-                        <div className="flex-1 flex items-center justify-between bg-muted/30 rounded-xl px-4 py-3 hover:bg-muted/50 transition-colors">
-                          <div>
-                            <span className="text-lg font-bold">
-                              {milestone.users}
-                            </span>
-                            <span className="text-sm text-muted-foreground ml-2">
-                              {milestone.label}
-                            </span>
-                          </div>
-                          <Badge
-                            variant="outline"
-                            className="rounded-full text-xs"
-                          >
-                            {milestone.period}
-                          </Badge>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Quick Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {analyticsStats.map((stat) => {
-                const Icon = stat.icon;
-                return (
-                  <Card
-                    key={stat.label}
-                    className="bg-card/50 hover:border-primary/30 transition-colors"
-                  >
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between mb-2">
-                        <Icon className="text-xl text-primary" />
-                        <span className="text-xs font-semibold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full">
-                          {stat.change}
-                        </span>
-                      </div>
-                      <div className="text-2xl font-bold">{stat.value}</div>
-                      <div className="text-xs text-muted-foreground mt-0.5">
-                        {stat.label}
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right — Analytics Image + Explanation */}
+        <div className="grid lg:grid-cols gap-10 lg:gap-16 items-start">
           <div className="space-y-6">
             {/* Analytics Screenshot */}
             <Card className="overflow-hidden img-hover-zoom">
@@ -181,31 +101,6 @@ export default function AnalyticsGrowth() {
                   📸 Actual Google Analytics data showing user growth — from 1
                   to <strong className="text-foreground">4.7K active users</strong>
                 </p>
-              </CardContent>
-            </Card>
-
-            {/* Unnat Explanation */}
-            <Card className="bg-gradient-to-br from-primary/5 to-amber-500/5 border-primary/20">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <RiArrowUpDoubleLine className="text-2xl text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">
-                      This is{" "}
-                      <span className="text-primary">उन्नत (Unnat)</span> —
-                      Progress in Action
-                    </h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      When we say <strong className="text-foreground">Unnat</strong>, we mean
-                      measurable growth. Our websites don&apos;t just look good — they
-                      drive real traffic, engage users, and grow your business
-                      organically. This Google Analytics snapshot proves our
-                      philosophy works.
-                    </p>
-                  </div>
-                </div>
               </CardContent>
             </Card>
 
