@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://unnatvega.vercel.app/sitemap.xml

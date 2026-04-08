@@ -38,14 +38,6 @@ const capabilities = [
 export default function ExportExpertise() {
   return (
     <section className="py-20 lg:py-32 relative overflow-hidden scroll-mt-20">
-      {/* Background Decorations */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-3 h-3 rounded-full bg-primary/30 animate-pulse" />
-        <div className="absolute top-1/3 right-20 w-2 h-2 rounded-full bg-amber-500/30 animate-pulse" />
-        <div className="absolute bottom-20 left-1/4 w-2.5 h-2.5 rounded-full bg-emerald-500/30 animate-pulse" />
-        <div className="absolute top-1/2 right-1/3 w-2 h-2 rounded-full bg-pink-500/30 animate-pulse" />
-        <div className="absolute bottom-1/3 right-10 w-3 h-3 rounded-full bg-blue-500/30 animate-pulse" />
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}

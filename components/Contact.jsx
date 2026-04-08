@@ -6,13 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import {
-    FiClock,
-    FiMail,
-    FiMapPin,
-    FiPhone,
-    FiSend,
-} from "react-icons/fi";
+import { FiClock, FiMail, FiMapPin, FiPhone, FiSend } from "react-icons/fi";
+
+const ACCESS_KEY = "04851ffa-ebe9-4fbe-af64-a2eb07ef24e9";
 
 const contactInfo = [
   {
@@ -24,7 +20,7 @@ const contactInfo = [
   {
     icon: FiPhone,
     title: "Call Us",
-    detail: "+91 7597464336",
+    detail: "+917597464336",
     sub: "Mon–Fri, 9 AM – 6 PM IST",
   },
   {
@@ -49,14 +45,38 @@ export default function Contact() {
     budget: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState("idle"); // "idle" | "loading" | "success" | "error"
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", budget: "", message: "" });
-    setTimeout(() => setSubmitted(false), 4000);
+    setStatus("loading");
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: ACCESS_KEY,
+          ...formData,
+          // Optional: customize the email subject line
+          subject: `New Project Inquiry: ${formData.subject}`,
+        }),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: "", budget: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
   };
 
   const handleChange = (e) => {
@@ -72,8 +92,7 @@ export default function Contact() {
             Contact Us
           </Badge>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight">
-            Let&apos;s Start Your{" "}
-            <span className="text-primary">Project</span>
+            Let&apos;s Start Your <span className="text-primary">Project</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
             Have a project in mind? Fill out the form and we&apos;ll get back to
@@ -97,12 +116,8 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="font-semibold text-sm">{item.title}</div>
-                      <div className="text-foreground text-sm mt-0.5">
-                        {item.detail}
-                      </div>
-                      <div className="text-xs text-muted-foreground mt-0.5">
-                        {item.sub}
-                      </div>
+                      <div className="text-foreground text-sm mt-0.5">{item.detail}</div>
+                      <div className="text-xs text-muted-foreground mt-0.5">{item.sub}</div>
                     </div>
                   </CardContent>
                 </Card>
@@ -111,31 +126,32 @@ export default function Contact() {
           </div>
 
           {/* Right — Form */}
-          <Card className="lg:col-span-3">
+          <Card className="lg:col-span-3" id="contact-form">
             <CardHeader>
               <CardTitle className="text-xl">Send us a message</CardTitle>
             </CardHeader>
             <CardContent>
-              {submitted ? (
+              {status === "success" ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center mx-auto mb-4">
                     <FiSend className="text-2xl text-green-500" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">
-                    Message Sent!
-                  </h3>
+                  <h3 className="text-xl font-semibold mb-2">Message Sent!</h3>
                   <p className="text-muted-foreground">
-                    Thanks for reaching out. We&apos;ll get back to you within
-                    24 hours.
+                    Thanks for reaching out. We&apos;ll get back to you within 24 hours.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {status === "error" && (
+                    <div className="text-sm text-red-500 bg-red-500/10 border border-red-500/20 rounded-lg px-4 py-3">
+                      Something went wrong. Please try again or email us directly.
+                    </div>
+                  )}
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">
-                        Full Name
-                      </label>
+                      <label className="text-sm font-medium mb-2 block">Full Name</label>
                       <Input
                         name="name"
                         placeholder="John Doe"
@@ -145,9 +161,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">
-                        Email Address
-                      </label>
+                      <label className="text-sm font-medium mb-2 block">Email Address</label>
                       <Input
                         name="email"
                         type="email"
@@ -161,9 +175,7 @@ export default function Contact() {
 
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">
-                        Project Type
-                      </label>
+                      <label className="text-sm font-medium mb-2 block">Project Type</label>
                       <Input
                         name="subject"
                         placeholder="e.g. Business Website"
@@ -173,9 +185,7 @@ export default function Contact() {
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">
-                        Budget Range
-                      </label>
+                      <label className="text-sm font-medium mb-2 block">Budget Range</label>
                       <Input
                         name="budget"
                         placeholder="e.g. ₹50,000 or $1000"
@@ -186,9 +196,7 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="text-sm font-medium mb-2 block">
-                      Project Details
-                    </label>
+                    <label className="text-sm font-medium mb-2 block">Project Details</label>
                     <Textarea
                       name="message"
                       placeholder="Tell us about your project, goals, and timeline..."
@@ -202,9 +210,10 @@ export default function Contact() {
                   <Button
                     type="submit"
                     size="lg"
+                    disabled={status === "loading"}
                     className="w-full sm:w-auto rounded-full px-8 gap-2"
                   >
-                    Send Message <FiSend />
+                    {status === "loading" ? "Sending..." : <>Send Message <FiSend /></>}
                   </Button>
                 </form>
               )}

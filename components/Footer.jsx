@@ -47,7 +47,7 @@ const contactInfo = [
   {
     icon: FiPhone,
     label: "Phone",
-    value: "+91 75974 64336",
+    value: "+9175974 64336",
     href: "tel:+917597464336",
   },
   {

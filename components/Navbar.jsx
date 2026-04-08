@@ -10,18 +10,15 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { HiOutlineBars3 } from "react-icons/hi2";
-import { RiFlashlightLine } from "react-icons/ri";
 import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { name: "About", href: "#meaning" },
-  { name: "Performance", href: "#pagespeed" },
-  { name: "Growth", href: "#analytics" },
-  { name: "Services", href: "#services" },
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact", href: "#contact" },
+  { name: "Performance", href: "/#pagespeed" },
+  { name: "Growth", href: "/#analytics" },
+  { name: "Services", href: "/#services" },
+  { name: "Portfolio", href: "/#portfolio" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -65,13 +62,6 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden lg:block">
-            <Button className="rounded-full px-6 bg-gradient-to-r from-primary to-amber-500 hover:opacity-90">
-              Get a Free Quote
-            </Button>
-          </div>
-
           {/* Mobile Menu */}
           <div className="lg:hidden">
             <Sheet open={open} onOpenChange={setOpen}>
@@ -98,11 +88,6 @@ export default function Navbar() {
                       {link.name}
                     </a>
                   ))}
-                  <div className="mt-4 px-4">
-                    <Button className="w-full rounded-full bg-gradient-to-r from-primary to-amber-500">
-                      Get a Free Quote
-                    </Button>
-                  </div>
                 </div>
               </SheetContent>
             </Sheet>

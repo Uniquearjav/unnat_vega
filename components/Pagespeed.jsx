@@ -11,9 +11,9 @@ import {
 } from "react-icons/ri";
 import { SiPagespeedinsights } from "react-icons/si";
 
-export default function Meaning() {
+export default function Pagespeed() {
   return (
-    <section id="meaning" className="py-20 lg:py-32 relative overflow-hidden scroll-mt-20">
+    <section id="pagespeed" className="py-20 lg:py-32 relative overflow-hidden scroll-mt-20">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-background" />
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl" />

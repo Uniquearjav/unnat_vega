@@ -25,7 +25,7 @@ const faqs = [
   {
     question: "Do you create website for foreign clients?",
     answer:
-      "Yes, we work with clients worldwide. We have experience building websites for businesses in rest of world. We communicate primarily in English and can accommodate different time zones for meetings and updates.",
+      "Yes, we work with clients worldwide. We have experience building websites for businesses in the rest of the world. We communicate primarily in English and can accommodate different time zones for meetings and updates.",
   },
   {
     question: "What is your payment structure?",
