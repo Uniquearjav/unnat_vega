@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import user_img from "@/public/user.png";
+import user_img from "@/public/user.webp";
 import Image from "next/image";
 import { SiGoogleanalytics } from "react-icons/si";
 

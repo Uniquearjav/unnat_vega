@@ -9,7 +9,7 @@ import {
   RiCheckDoubleLine,
   RiStarLine,
 } from "react-icons/ri";
-import country_img from "@/public/country.png";
+import country_img from "@/public/country.webp";
 import { FiGlobe } from "react-icons/fi";
 
 const capabilities = [

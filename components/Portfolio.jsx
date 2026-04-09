@@ -11,7 +11,7 @@ const projects = [
     category: "Export Showcase Website",
     description:
       "Export business website with product catalog, request sample form, contact form, and client testimonials.",
-    image: "/revati.png",
+    image: "/revati.webp",
     tech: ["Next.js", "JavaScript", "Tailwind"],
     live: "https://www.revaticraft.com",
   },
@@ -20,7 +20,7 @@ const projects = [
     category: "Export Business Website",
     description:
       "Dynamic export business e-commerce website with product listings.",
-    image: "/nirvatatva.png",
+    image: "/nirvatatva.webp",
     tech: ["Payload CMS", "MongoDB", "Next.js"],
     live: "https://www.nirvatatva.com",
   },
@@ -29,7 +29,7 @@ const projects = [
     category: "Consult Site",
     description:
       "Tax consultancy website with client testimonials, services, and contact information.",
-    image: "/a_consult.png",
+    image: "/a_consult.webp",
     tech: ["Tailwind", "Next.js"],
     live: "https://arjavconsultancy.vercel.app",
   },
@@ -38,7 +38,7 @@ const projects = [
     category: "Numerology Consultancy",
     description:
       "Numerology consultancy website with personalized readings, testimonials, and contact form.",
-    image: "/numerologist_simple.png",
+    image: "/numerologist_simple.webp",
     tech: ["Next.js"],
     live: "https://numerologistsimplebhansali.vercel.app",
   },
@@ -47,7 +47,7 @@ const projects = [
     category: "Open Source Saas Project",
     description:
       "Open source SaaS project with simple interest calculator, morse code translator, and responsive design.",
-    image: "/anantastra.png",
+    image: "/anantastra.webp",
     tech: ["Next.js"],
     live: "https://anantastra.vercel.app",
   },

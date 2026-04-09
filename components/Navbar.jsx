@@ -43,7 +43,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <Image src="/unnatvega_logo.png" alt="Unnat Vega Logo" className="rounded-lg" width={40} height={40} />
+            <Image src="/unnatvega_logo.webp" alt="Unnat Vega Logo" className="rounded-lg" width={40} height={40} />
             <span className="text-xl font-bold tracking-tight">
               Unnat<span className="text-primary">Vega</span>
             </span>

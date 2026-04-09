@@ -74,7 +74,7 @@ export default function Footer() {
           <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <a href="#" className="flex items-center gap-2 mb-4">
               <Image
-                src="/unnatvega_logo.png"
+                src="/unnatvega_logo.webp"
                 alt="Unnat Vega Logo"
                 className="rounded-full"
                 width={80}

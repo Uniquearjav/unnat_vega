@@ -55,7 +55,7 @@ export const metadata = {
     description: "Unnat Vega create modern, high-performance websites for businesses, exporters, and brands worldwide. Whether you're targeting local markets or international clients, we build scalable, SEO-friendly websites that help you grow globally.",
     url: "https://unnatvega.vercel.app",
     siteName: "Unnat Vega",
-    images: [{ url: "/og_unnatvega.png" }],
+    images: [{ url: "/og_unnatvega.webp" }],
     locale: "en_IN",
     type: "website",
   },
