@@ -8,6 +8,7 @@ import CTABanner from "@/components/CTABanner";
 import ExportExpertise from "@/components/ExportExpertise";
 import AnalyticsGrowth from "@/components/AnalyticsGrowth";
 import Pagespeed from "@/components/Pagespeed";
+import Listing from "@/components/Listing";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <Services />
       <Pagespeed />
+      <Listing />
       <Portfolio />
       <AnalyticsGrowth />
       <ExportExpertise />

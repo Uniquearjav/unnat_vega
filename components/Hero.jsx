@@ -22,10 +22,10 @@ export default function Hero() {
               We Build
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-400 to-amber-400">
-                Blazing-Fast
+                Crafting Fast
               </span>
               <br />
-              Websites
+              Digital Products
             </h1>
 
             <p className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-lg leading-relaxed">
@@ -48,7 +48,7 @@ export default function Hero() {
                 className="rounded-full px-8 gap-2 text-base"
               >
                 <Link href="/#portfolio" className="flex items-center gap-4">
-                  View Our Work <FiExternalLink />
+                  View Portfolio <FiExternalLink />
                 </Link>
               </Button>
             </div>

@@ -14,10 +14,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navLinks = [
-  { name: "Performance", href: "/#pagespeed" },
-  { name: "Growth", href: "/#analytics" },
+  { name: "Home", href: "/" },
   { name: "Services", href: "/#services" },
   { name: "Portfolio", href: "/#portfolio" },
+  { name: "Testimonials", href: "/#testimonials" },
   { name: "Contact", href: "/#contact" },
 ];
 
